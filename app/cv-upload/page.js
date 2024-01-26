@@ -47,6 +47,11 @@ const ChatPage = () => {
                 <ButtonAccount />
             </div>
             <div style={styles.container} className='flex content-between justify'>
+                <input type="file"></input>
+                <form method="post" enctype="multipart/form-data">
+                    <input name="file" type="file" multiple></input>
+                    <button type="submit">Upload</button>
+                </form>
                 <div class >
                     <button className="btn btn-primary btn-wide" onClick={uploadButtonClick}>
                         Upload CV (as PDF)
