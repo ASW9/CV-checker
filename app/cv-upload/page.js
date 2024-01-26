@@ -31,8 +31,12 @@ const styles = {
 
 const ChatPage = () => {
 
+    const uploadButtonClick = () => {
+
+    }
+
     const convertToHTML = () => {
-        
+
     }
     
     return (
@@ -42,7 +46,7 @@ const ChatPage = () => {
             </div>
             <div style={styles.container} className='flex content-between justify'>
                 <div class >
-                    <button className="btn btn-primary btn-wide" >
+                    <button className="btn btn-primary btn-wide" onClick={uploadButtonClick}>
                         Upload CV (as PDF)
                     </button>
                 </div>
