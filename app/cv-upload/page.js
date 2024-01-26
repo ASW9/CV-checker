@@ -30,13 +30,22 @@ const styles = {
 
 
 const ChatPage = () => {
+
+    const convertToHTML = () => {
+        
+    }
     
     return (
         <div style={{height: "100%"}} className='relative'>
             <div className="absolute m-4 left-0">
                 <ButtonAccount />
             </div>
-            <div style={styles.container} className='flex content-between'>
+            <div style={styles.container} className='flex content-between justify'>
+                <div class >
+                    <button className="btn btn-primary btn-wide" >
+                        Upload CV (as PDF)
+                    </button>
+                </div>
             </div>
         </div>
   );
