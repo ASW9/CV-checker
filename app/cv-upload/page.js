@@ -32,7 +32,9 @@ const styles = {
 const ChatPage = () => {
 
     const uploadButtonClick = () => {
+        //In this function we need to trigger a pop up that allows them to upload a file
 
+        //then we will call the convertToHTML function with that file. 
     }
 
     const convertToHTML = () => {
