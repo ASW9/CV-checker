@@ -31,6 +31,26 @@ const styles = {
 
 const ChatPage = () => {
 
+    const form = document.querySelector('form');
+
+    function handleSubmit(event) {
+        event.preventDefault();
+
+        uploadFiles();
+    }
+
+    function uploadFiles() {
+        const url = 'https://httpbin.org/post';
+        const method = 'post';
+
+        const xhr = new XMLHttpRequest();
+
+        const data = new FormData(form);
+
+        xhr.open(method, url);
+        xhr.send(data);
+      }
+
     const uploadButtonClick = () => {
         //In this function we need to trigger a pop up that allows them to upload a file
 
@@ -47,13 +67,14 @@ const ChatPage = () => {
                 <ButtonAccount />
             </div>
             <div style={styles.container} className='flex content-between justify'>
-                <input type="file"></input>
-                <form method="post" enctype="multipart/form-data">
+                <form action="https://httpbin.org/post" method="post" enctype="multipart/form-data">
                     <input name="file" type="file" multiple></input>
-                    <button type="submit">Upload</button>
+                    <button onClick={handleSubmit}>
+                        Upload
+                    </button>
                 </form>
-                <div class >
-                    <button className="btn btn-primary btn-wide" onClick={uploadButtonClick}>
+                < div class >
+                    <button action="https://httpbin.org/post" className="btn btn-primary btn-wide" onClick={uploadButtonClick}>
                         Upload CV (as PDF)
                     </button>
                 </div>
