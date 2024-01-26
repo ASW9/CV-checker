@@ -57,8 +57,10 @@ const ChatPage = () => {
         //then we will call the convertToHTML function with that file. 
     }
 
-    const convertToHTML = () => {
-
+    async function convertToHTML () {
+        const pdf2html = require('pdf2html');
+        const html = await pdf2html.html('sample.pdf');
+        console.log(html);
     }
     
     return (
