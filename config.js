@@ -7,7 +7,7 @@ const config = {
   appDescription:
     "you're one click away from your perfect tomorrow",
   // REQUIRED (no https://, not trialing slash at the end, just the naked domain)
-  domainName: "shipfa.st",
+  domainName: process.env.NODE_ENV === "development" ? "http://localhost:3000": "shipfa.st",
   crisp: {
     // Crisp website ID. IF YOU DON'T USE CRISP: just remove this => Then add a support email in this config file (mailgun.supportEmail) otherwise customer support won't work.
     id: "",
