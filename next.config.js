@@ -9,6 +9,9 @@ const nextConfig = {
       "logos-world.net",
     ],
   },
+  experimental: {
+    serverComponentsExternalPackages: ['pdf2json'],
+  },
 };
 
 module.exports = nextConfig;

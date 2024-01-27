@@ -4,8 +4,11 @@ import { v4 as uuidv4 } from 'uuid'; // To generate a unique filename
 import PDFParser from 'pdf2json'; // To parse the pdf
 
 export async function POST(req) {
+  console.log("request", req)
   const formData = await req.formData();
   const uploadedFiles = formData.getAll('filepond');
+  console.log("form data", formData)
+  console.log("uploaded files", uploadedFiles)
   let fileName = '';
   let parsedText = '';
 
@@ -17,13 +20,13 @@ export async function POST(req) {
     if (uploadedFile instanceof File) {
       // Generate a unique filename
       fileName = uuidv4();
-
+      console.log("filename", fileName)
       // Convert the uploaded file into a temporary file
       const tempFilePath = `/tmp/${fileName}.pdf`;
 
       // Convert ArrayBuffer to Buffer
       const fileBuffer = Buffer.from(await uploadedFile.arrayBuffer());
-
+      
       // Save the buffer as a file
       await fs.writeFile(tempFilePath, fileBuffer);
 
