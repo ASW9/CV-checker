@@ -1,5 +1,7 @@
 "use client"
 import { useEffect, useRef, useState } from 'react';
+import { FilePond } from 'react-filepond';
+import 'filepond/dist/filepond.min.css';
 
 const styles = {
     container: {
@@ -57,9 +59,9 @@ const ChatPage = () => {
     }
 
     async function convertToHTML () {
-        const pdf2html = require('pdf2html');
-        const html = await pdf2html.html('sample.pdf');
-        console.log(html);
+        // const pdf2html = require('pdf2html');
+        // const html = await pdf2html.html('sample.pdf');
+        // console.log(html);
     }
     
     return (
@@ -71,6 +73,13 @@ const ChatPage = () => {
                         Upload CV (as PDF)
                     </button>
                 </div>
+                <FilePond
+                server={{
+                    process: '/api/upload',
+                    fetch: null,
+                    revert: null,
+                }}
+                />
             </div>
         </>
   );
