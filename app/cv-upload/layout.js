@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/utils/next-auth";
 import config from "@/config";
+import ButtonAccount from '@/components/ButtonAccount';
 
 // This is a server-side component to ensure the user is logged in.
 // If not, it will redirect to the login page.
@@ -29,19 +30,11 @@ export default async function LayoutPrivate({ children }) {
     // before:blur-2xl
     // transition
     // duration-200
-    return <div className="h-full">
-        <div className="
-            absolute
-            h-full w-full
-            blur-3xl
-        ">
-            <div className="relative h-full w-full">
-                <div className="absolute bg-gradient-to-b from-blue-400 to-blue-100 via-sky-200 h-full w-full"></div>
-                {/* <div className="absolute left-0 top-32 bg-red-200 h-64 w-32 rounded-full"></div> */}
-                {/* <div className="absolute left-64 bottom-16 bg-pink-200 h-64 w-32 rounded-full"></div> */}
-                {/* <div className="absolute right-0 bottom-64 bg-green-200 h-32 w-64 rounded-full"></div> */}
-            </div>
+    return <div className="h-screen">
+        <div className="absolute m-4 left-0">
+            <ButtonAccount />
         </div>
+        
         {children}
     </div>;
 }

@@ -1,6 +1,5 @@
 "use client"
 import { useEffect, useRef, useState } from 'react';
-import ButtonAccount from '@/components/ButtonAccount';
 
 const styles = {
     container: {
@@ -49,7 +48,7 @@ const ChatPage = () => {
 
         xhr.open(method, url);
         xhr.send(data);
-      }
+    }
 
     const uploadButtonClick = () => {
         //In this function we need to trigger a pop up that allows them to upload a file
@@ -64,24 +63,16 @@ const ChatPage = () => {
     }
     
     return (
-        <div style={{height: "100%"}} className='relative'>
-            <div className="absolute m-4 left-0">
-                <ButtonAccount />
-            </div>
+        <>
             <div style={styles.container} className='flex content-between justify'>
-                <form action="https://httpbin.org/post" method="post" enctype="multipart/form-data">
-                    <input name="file" type="file" multiple></input>
-                    <button onClick={handleSubmit}>
-                        Upload
-                    </button>
-                </form>
-                < div class >
+                <input name="file" type="file" multiple></input>
+                < div >
                     <button action="https://httpbin.org/post" className="btn btn-primary btn-wide" onClick={uploadButtonClick}>
                         Upload CV (as PDF)
                     </button>
                 </div>
             </div>
-        </div>
+        </>
   );
 
 };
