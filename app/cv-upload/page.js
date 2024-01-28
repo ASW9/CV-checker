@@ -6,6 +6,12 @@ import 'filepond/dist/filepond.min.css';
 
 const ChatPage = () => {
 
+    const handlingResponse = (response) => {
+        console.log(response)
+        const cvText = response.data
+        console.log(cvText)
+    }
+
     // const form = document.querySelector('form');
 
     // function handleSubmit(event) {
@@ -46,16 +52,24 @@ const ChatPage = () => {
                     Upload CV (as PDF)
                 </div>
                 <FilePond
-                server={{
-                    process: '/api/upload',
-                    fetch: null,
-                    revert: null,
-                }}
+                    server={{
+                        process: {
+                            url: '/api/upload',
+                            method: 'POST',
+                            withCredentials: false,
+                            headers: {},
+                            timeout: 8000,
+                            onload: handlingResponse,
+                            onerror: null,
+                            ondata: null,
+                        },
+                        fetch: null,
+                        revert: null,
+                    }}
                 />
             </div>
         </>
   );
-
 };
 
 export default ChatPage;
