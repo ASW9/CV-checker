@@ -4,59 +4,72 @@ import { v4 as uuidv4 } from 'uuid'; // To generate a unique filename
 import PDFParser from 'pdf2json'; // To parse the pdf
 
 export async function POST(req) {
-  console.log("request", req)
-  const formData = await req.formData();
-  const uploadedFiles = formData.getAll('filepond');
-  console.log("form data", formData)
-  console.log("uploaded files", uploadedFiles)
-  let fileName = '';
-  let parsedText = '';
+    console.log("request", req)
+    const formData = await req.formData();
+    
+    const content = await getPdfContent(formData)
 
-  if (uploadedFiles && uploadedFiles.length > 0) {
-    const uploadedFile = uploadedFiles[1];
-    console.log('Uploaded file:', uploadedFile);
+    return NextResponse.json(content, {status: 200})
+}
 
-    // Check if uploadedFile is of type File
-    if (uploadedFile instanceof File) {
-      // Generate a unique filename
-      fileName = uuidv4();
-      console.log("filename", fileName)
-      // Convert the uploaded file into a temporary file
-      const tempFilePath = `/tmp/${fileName}.pdf`;
+const getPdfContent = async (formData) => {
+    const uploadedFiles = formData.getAll('filepond');
+    console.log("form data", formData)
+    console.log("uploaded files", uploadedFiles)
+    let fileName = '';
+    let parsedText = '';
 
-      // Convert ArrayBuffer to Buffer
-      const fileBuffer = Buffer.from(await uploadedFile.arrayBuffer());
-      
-      // Save the buffer as a file
-      await fs.writeFile(tempFilePath, fileBuffer);
+    if (uploadedFiles && uploadedFiles.length > 0) {
+        const uploadedFile = uploadedFiles[1];
+        console.log('Uploaded file:', uploadedFile);
 
-      // Parse the pdf using pdf2json. See pdf2json docs for more info.
+        // Check if uploadedFile is of type File
+        if (uploadedFile instanceof File) {
+        // Generate a unique filename
+        fileName = uuidv4();
+        console.log("filename", fileName)
+        // Convert the uploaded file into a temporary file
+        const tempFilePath = `/tmp/${fileName}.pdf`;
 
-      // The reason I am bypassing type checks is because
-      // the default type definitions for pdf2json in the npm install
-      // do not allow for any constructor arguments.
-      // You can either modify the type definitions or bypass the type checks.
-      // I chose to bypass the type checks.
-      const pdfParser = new (PDFParser)(null, 1);
+        // Convert ArrayBuffer to Buffer
+        const fileBuffer = Buffer.from(await uploadedFile.arrayBuffer());
+        
+        // Save the buffer as a file
+        await fs.writeFile(tempFilePath, fileBuffer);
 
-      // See pdf2json docs for more info on how the below works.
-      pdfParser.on('pdfParser_dataError', (errData) =>
-        console.log(errData.parserError)
-      );
-      pdfParser.on('pdfParser_dataReady', () => {
-        console.log((pdfParser).getRawTextContent());
-        parsedText = (pdfParser).getRawTextContent();
-      });
+        return new Promise ((resolve, reject) => {
+        
+            // Parse the pdf using pdf2json. See pdf2json docs for more info.
 
-      pdfParser.loadPDF(tempFilePath);
+            // The reason I am bypassing type checks is because
+            // the default type definitions for pdf2json in the npm install
+            // do not allow for any constructor arguments.
+            // You can either modify the type definitions or bypass the type checks.
+            // I chose to bypass the type checks.
+            const pdfParser = new (PDFParser)(null, 1);
+
+            // See pdf2json docs for more info on how the below works.
+            pdfParser.on('pdfParser_dataError', (errData) => {
+                console.log(errData.parserError)
+                reject(errData.parserError)
+            });
+
+            pdfParser.on('pdfParser_dataReady', () => {
+                parsedText = (pdfParser).getRawTextContent();
+                console.log("raw text content 1", parsedText);
+                resolve(parsedText)
+            });
+
+            pdfParser.loadPDF(tempFilePath);
+            
+        })
+    
     } else {
-      console.log('Uploaded file is not in the expected format.');
+        console.log('Uploaded file is not in the expected format.');
+        throw new Error('Uploaded file is not in the expected format.')
+        }
+    } else {
+        console.log('No files found.');
+        throw new Error('No files found.')
     }
-  } else {
-    console.log('No files found.');
-  }
-
-  const response = new NextResponse(parsedText);
-  response.headers.set('FileName', fileName);
-  return response;
 }
