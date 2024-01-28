@@ -14,15 +14,14 @@ const CTA = () => {
       <div className="relative hero-content text-center text-neutral-content p-8">
         <div className="flex flex-col items-center max-w-xl p-8 md:p-0">
           <h2 className="font-bold text-3xl md:text-5xl tracking-tight mb-8 md:mb-12">
-            Boost your app, launch, earn
+            Get your dream job and build your future today
           </h2>
           <p className="text-lg opacity-80 mb-12 md:mb-16">
-            Don&apos;t waste time integrating APIs or designing a pricing
-            section...
+            Why delay? use the fastest most comprehensive guide and create the key to your perfect tomorrow
           </p>
 
           <button className="btn btn-primary btn-wide">
-            Get {config.appName}
+            Get {config.appName} now!
           </button>
         </div>
       </div>
