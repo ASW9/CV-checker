@@ -2,14 +2,20 @@
 import { useEffect, useRef, useState } from 'react';
 import { FilePond } from 'react-filepond';
 import 'filepond/dist/filepond.min.css';
+import apiClient from '@/utils/api';
 
 
 const ChatPage = () => {
 
-    const handlingResponse = (response) => {
+    const [feedbackText, setFeedbackText] = useState("OPENAPI RESPONSE HERE")
+
+    const handlingResponse = async (response) => {
         console.log(response)
-        const cvText = response.data
-        console.log(cvText)
+        const cvText = response
+        await apiClient.post("/gpt", cvText)
+        .then((response) => {
+            setFeedbackText(response)
+        })
     }
 
     // const form = document.querySelector('form');
@@ -47,11 +53,11 @@ const ChatPage = () => {
 
     return (
         <>
-            <div className='flex content-between h-screen items-center justify-center '>
-                <div className='text-2xl font-bold'>
+            <div className='flex flex-col content-between h-screen items-center justify-center '>
+                <div className='text-2xl font-bold pb-16'>
                     Upload CV (as PDF)
                 </div>
-                <FilePond
+                <FilePond className='pt-32'
                     server={{
                         process: {
                             url: '/api/upload',
@@ -67,6 +73,9 @@ const ChatPage = () => {
                         revert: null,
                     }}
                 />
+                <div className='pt-16'>
+                    {feedbackText}
+                </div>
             </div>
         </>
   );
