@@ -5,7 +5,7 @@ import appConfig from "@/config";
 import { useHasAccess } from '@/hooks';
 import { useState } from "react";
 import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField, Typography, useTheme, Avatar, Backdrop, CircularProgress } from "@mui/material";
-import CTAButton from "@/components/generic/CTAButton";
+import CTAButton from "@/components/CTAButton";
 import { AppBar, IconButton, Toolbar } from "@mui/material";
 import CloseIcon from '@mui/icons-material/Close';
 import Slide from '@mui/material/Slide';
