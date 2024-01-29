@@ -8,6 +8,18 @@ import Customisation from '@/components/PersonaCreator';
 
 const ChatPage = () => {
 
+    //to be deleted
+    const [personaConfig, setPersonaConfig] = useState({
+        "avatarSrc": "",
+        "systemMessage": "persona.sysMsg",
+        "initialMessageBase64": "initialMessageBase64",
+        "voice": "persona.voice",
+        "title": "persona.title", 
+        "speakFirst": "persona.speakFirst",
+    })
+
+    // end of to be deleted
+
     const [openFeedbackBox, setOpenFeedbackBox] = useState(false)
     const toggleFeedbackBox = () => {
         setOpenFeedbackBox(true)
@@ -80,8 +92,11 @@ const ChatPage = () => {
                             }}
                             credits={{label:'', url:''}}
                         />
-                        <Customisation toggleOpen={toggleFeedbackBox} open={openFeedbackBox} config={personaConfig} updateConfig={updatePersonaConfig} setUrlId={setUrlId} setConversationState={setConversationState}/>
+                        <Customisation toggleOpen={toggleFeedbackBox} open={openFeedbackBox} config={personaConfig} updateConfig={setPersonaConfig}/>
                     </div>
+                    <button onClick={setOpenFeedbackBox} >
+                        CLick me
+                    </button>
             </div>
 
         </div>
