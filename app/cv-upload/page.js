@@ -73,6 +73,7 @@ const ChatPage = () => {
                                 fetch: null,
                                 revert: null,
                             }}
+                            credits={{label:'', url:''}}
                         />
                     </div>
             </div>
