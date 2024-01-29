@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { FilePond } from 'react-filepond';
 import 'filepond/dist/filepond.min.css';
 import Image from 'next/image';
-
+import FileUpload from '@/components/FileUpload';
 
 const ChatPage = () => {
 
@@ -67,7 +67,7 @@ const ChatPage = () => {
                                 You're one click away from your perfect job!
                             </div>
                         </div>
-                        <FilePond
+                        <FileUpload
                             server={{
                                 process: '/api/upload',
                                 fetch: null,
