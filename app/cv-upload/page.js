@@ -4,9 +4,14 @@ import { FilePond } from 'react-filepond';
 import 'filepond/dist/filepond.min.css';
 import Image from 'next/image';
 import FileUpload from '@/components/FileUpload';
+import Customisation from '@/components/PersonaCreator';
 
 const ChatPage = () => {
 
+    const [openFeedbackBox, setOpenFeedbackBox] = useState(false)
+    const toggleFeedbackBox = () => {
+        setOpenFeedbackBox(true)
+    }
     // const form = document.querySelector('form');
 
     // function handleSubmit(event) {
@@ -51,7 +56,7 @@ const ChatPage = () => {
             <div className='flex border border-gray-700 rounded-2xl flex-col content-between w-full max-w-md justify-between h-[80%] bg-white shadow-2xl'>
                     <div className='text-2xl font-bold border-b border-gray-300 p-4'>
                         Resume checker
-                    </div>
+                    </div> 
                     <div className='h-full flex flex-col justify-center p-4'>
                         <div className='flex flex-col items-center'>
                             <Image className='rounded-xl' 
@@ -75,6 +80,7 @@ const ChatPage = () => {
                             }}
                             credits={{label:'', url:''}}
                         />
+                        <Customisation toggleOpen={toggleFeedbackBox} open={openFeedbackBox} config={personaConfig} updateConfig={updatePersonaConfig} setUrlId={setUrlId} setConversationState={setConversationState}/>
                     </div>
             </div>
 
