@@ -130,19 +130,16 @@ const Customisation = (props) => {
             <div className="flex flex-col m-auto h-full w-full max-w-md">
                 <DialogTitle>
                     <Typography variant="h4">
-                        Create a New Persona
+                        Resume Feedback
                     </Typography>    
                 </DialogTitle>
                 <DialogContent>
                     <Typography variant="h5">
-                        You can change the personality of your assistant here.
+                        YoUr CV is Tortally cR*p (heading?)
                     </Typography>
-                    <div style={{display: "flex", alignItems:"center", flexDirection: "column", margin: "16px"}}>
-                        <Avatar src={props.config.avatarSrc} style={{height: "100px", width: "100px"}}/>
-                    </div>
                     <DialogContentText>
                         <Typography variant="h5">
-                            Describe the personality of your AI assistant, any background context it should be aware of, and guidelines for how it should respond.
+                            Some text to do or smth
                         </Typography>
                     </DialogContentText>
                     <TextField fullWidth={true} multiline={true} variant="outlined" onChange={e=>{
@@ -150,7 +147,7 @@ const Customisation = (props) => {
                     }} value={systemMessage} InputProps={{style: {color: theme.palette.secondary.main, fontSize: "14px"}}} style={{marginTop: "14px"}}/>
                     <DialogContentText style={{marginTop: "14px"}}>
                         <Typography variant="h5">
-                            Set the message that your assistant will speak when activated. 
+                            Follow up questions? 
                         </Typography>
                     </DialogContentText>
                     <TextField fullWidth={true} multiline={true} variant="outlined" onChange={e=>{
@@ -161,7 +158,7 @@ const Customisation = (props) => {
                     <Link href="/chat/examples">
                         <Button variant="text" fontSize="16px" color="secondary" style={{margin:"10px"}}>
                             <div style={{fontSize: "16px"}}>
-                                See Examples?
+                                Generate Response
                             </div>
                         </Button>
                     </Link>
