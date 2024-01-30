@@ -8,15 +8,15 @@ import apiClient from '@/utils/api';
 const ChatPage = () => {
 
     const [feedbackText, setFeedbackText] = useState("OPENAPI RESPONSE HERE")
-
     const handlingResponse = async (response) => {
-        console.log(response)
         const cvText = response
         await apiClient.post("/gpt", cvText)
         .then((response) => {
             setFeedbackText(response)
         })
     }
+
+
 
     // const form = document.querySelector('form');
 
@@ -50,6 +50,7 @@ const ChatPage = () => {
     //     // console.log(html);
     // }
     
+
 
     return (
         <>
