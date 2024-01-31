@@ -15,7 +15,7 @@ const UpdatedCVComponent = ({}) => {
                 Don&apos;t take our word for it. Here&apos;s what they have to say
                 about ShipFast.
             </p>
-            <div className="flex flex-col w-full justify-items-center">
+            <div className="flex flex-col w-full items-center">
                 <Image
                     src="/UpdatedCV.png"
                     width={1000}
