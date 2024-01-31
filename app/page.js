@@ -12,23 +12,23 @@ import config from "@/config";
 export default function Home() {
   return (
     <>
-      <Header />
-      <main>
-        <Hero 
+      < Header />
+      < main >
+        < Hero 
             // title="Create and share AI&apos;s you can talk to"
             // description="Sometimes you need someone to talk things through with. We make it easy to have those conversations with exactly the right personality."
             // ctaButtonText="Try it out"
             // img="/join.png"
             // ctaButtonLink={config.auth.callbackUrl}
         />
-        <Problem />
-        <FeaturesAccordion />
+        < Problem />
+        < FeaturesAccordion />
         < Testimonials3 />
-        <Pricing />
-        <FAQ />
-        <CTA />
-      </main>
-      <Footer />
+        < Pricing />
+        < FAQ />
+        < CTA />
+      </ main >
+      < Footer />
     </>
   );
 }
