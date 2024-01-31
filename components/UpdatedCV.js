@@ -17,7 +17,7 @@ const UpdatedCVComponent = ({}) => {
             </p>
             <div className="flex flex-col w-full items-center">
                 <Image
-                    src="/UpdatedCV.png"
+                    src="/greatCV.png"
                     width={1000}
                     height={2000}
                     alt=""
