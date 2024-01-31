@@ -16,14 +16,19 @@ const UpdatedCVComponent = ({}) => {
                 about ShipFast.
             </p>
             <div className="flex flex-col w-full items-center">
-                <Image
+                <Image className="shadow-2xl cursor-text"
                     src="/greatCV.png"
                     width={1000}
                     height={2000}
                     alt=""
                 />
             </div>
-        </div>
+            <a href="/greatCV.png" download="cv">
+              <button className="btn btn-primary btn-wide mt-12">
+						    Download  
+					    </button>
+            </a>
+        </div>  
       </div>
     </section>
   );
