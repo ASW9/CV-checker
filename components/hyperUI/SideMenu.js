@@ -6,7 +6,7 @@ import ButtonAccountMenu from "../ButtonAccountMenu";
 
 const SideMenu = (props) => {
     return (
-        <div class="flex h-screen w-16 flex-col justify-between border-e bg-white">
+        <div class="flex h-screen w-16 flex-col justify-between border bg-white fixed">
             <div>
                 <div class="inline-flex h-16 w-16 items-center justify-center">
                 <span

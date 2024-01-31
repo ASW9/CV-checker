@@ -24,7 +24,7 @@ const UpdatedCVComponent = ({}) => {
                 />
             </div>
             <a href="/greatCV.png" download="cv">
-              <button className="btn btn-primary btn-wide mt-12">
+              <button className="btn btn-white btn-wide mt-12">
 						    Download  
 					    </button>
             </a>

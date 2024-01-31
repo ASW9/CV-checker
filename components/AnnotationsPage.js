@@ -24,10 +24,10 @@ const AnnotationComponent = () => {
                 />
             </div>
             <div className="flex flex-col">
-                <div className={'shadow-lgrounded-xl bg-white border-gray-300 border-solid border-2 items-center text-xs w-64 p-4 hover:scale-105 ease-in-out duration-500'}>
+                <div className={'shadow-lgrounded-xl bg-white border-gray-300 border-solid border-2 items-center text-xs w-64 p-4 hover:scale-105 ease-in-out duration-500 rounded-xl'}>
                     Your CV would be more effective and reader friendly if you use concise bullet points instead of lengthy paragraphs
                 </div>
-                <div className={'shadow-lgrounded-xl bg-white border-gray-300 border-solid border-2 items-center text-xs w-64 p-4 hover:scale-105 ease-in-out duration-500'}>
+                <div className={'shadow-lgrounded-xl bg-white border-gray-300 border-solid border-2 items-center text-xs w-64 p-4 hover:scale-105 ease-in-out duration-500 rounded-xl'}>
                     Your CV would be more effective and reader friendly if you use concise bullet points instead of lengthy paragraphs
                 </div>
             </div>
