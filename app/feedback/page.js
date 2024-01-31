@@ -4,7 +4,8 @@ import { FilePond } from 'react-filepond';
 import 'filepond/dist/filepond.min.css';
 import Image from 'next/image';
 import FileUpload from '@/components/FileUpload';
-import AnnotationComponent from '@/components/Annotations';
+import StatsDial from '@/components/Stats';
+import AnnotationComponent from '@/components/AnnotationsPage';
 import { Feed } from '@mui/icons-material';
 import UpdatedCVComponent from '@/components/UpdatedCV';
 
@@ -13,6 +14,7 @@ const FeedbackPage = () => {
     return (
         <>
             < AnnotationComponent />
+            <StatsDial />
             < UpdatedCVComponent />
         </>
   );
