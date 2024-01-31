@@ -60,11 +60,11 @@ const ChatPage = () => {
         setLoadingState("Uploading file...")
         await delay(2000)
         setLoadingState("Processing your CV...")
-        await delay(2000)
+        await delay(4000)
         setLoadingState("🧠 Generating feedback...")
         await delay(2000)
         setLoadingState("✨ Putting on the finishing touches...")
-        await delay(2000)
+        await delay(6000)
 
         // setTimeout(() => {
         //     setLoadingState("Processing your CV...")
@@ -134,7 +134,7 @@ const ChatPage = () => {
             <Backdrop open={loadingState} sx={{zIndex: 1000, backgroundColor: "rgba(0, 0, 0, 0.9)"}}>
                 <div style={styles.backdrop}>
                     <CircularProgress />
-                    <Typography variant="h4" style={{margin: "30px", textAlign:"center"}}>
+                    <Typography variant="h4" className='m-6 text-white'>
                         {loadingState}
                     </Typography>
                 </div>
