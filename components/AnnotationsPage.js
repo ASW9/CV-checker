@@ -12,8 +12,7 @@ const AnnotationComponent = ({}) => {
             </h2>
           </div>
           <p className="lg:w-2/3 mx-auto leading-relaxed text-base text-base-content/80 pb-12">
-            Don&apos;t take our word for it. Here&apos;s what they have to say
-            about ShipFast.
+            Here's a detailed overview of the feedback pointers you could use for your current CV.
           </p>
           <div className="flex flex-col w-full items-center">
             <Image
