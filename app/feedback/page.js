@@ -6,12 +6,14 @@ import Image from 'next/image';
 import FileUpload from '@/components/FileUpload';
 import AnnotationComponent from '@/components/Annotations';
 import { Feed } from '@mui/icons-material';
+import UpdatedCVComponent from '@/components/UpdatedCV';
 
 const FeedbackPage = () => {
 
     return (
         <>
             < AnnotationComponent />
+            < UpdatedCVComponent />
         </>
   );
 
