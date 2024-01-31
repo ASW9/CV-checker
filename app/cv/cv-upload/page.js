@@ -7,6 +7,22 @@ import FileUpload from '@/components/FileUpload';
 
 const ChatPage = () => {
 
+    const [loadingState, setLoadingState] = useState(null)
+    
+    // bullshit loading mode
+    setLoadingState("🧠 Processing personality...")
+    setTimeout(() => {
+        setLoadingState("📸 Taking assistant headshot...")
+    }, 2000);
+    setTimeout(() => {
+        setLoadingState("🔊 Generating voice...")
+    }, 4000);
+    setTimeout(() => {
+        setLoadingState("✨ Putting on the finishing touches...")
+    }, 6000);
+    // end of bullshit loading mode
+
+
     return (
         <>
         <div className='flex flex-col h-screen w-screen items-center p-16 justify-center '>
