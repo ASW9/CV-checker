@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import AnnotationBox from "./AnnotationBox";
 
 const AnnotationComponent = () => {
   return (
@@ -25,6 +26,7 @@ const AnnotationComponent = () => {
           </div>
         </div>
       </div>
+      <AnnotationBox text={"Your CV would be more effective and reader friendly if you use concise bullet points instead of lengthy paragraphs"} />
     </section>
   );
 };
