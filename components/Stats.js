@@ -13,11 +13,11 @@ const StatsDial = ({ children }) => {
               Where you could improve
             </h2>
           </div>
-          <div className="flex flex-col w-full justify-items-center">
+          <div className="flex flex-col w-full items-center">
             <Image
               src="/dials.png"
-              width={1000}
-              height={1000}
+              width={700}
+              height={400}
               alt=""
             />
           </div>
