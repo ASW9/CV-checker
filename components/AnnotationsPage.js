@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-const AnnotationComponent = ({}) => {
+const AnnotationComponent = () => {
   return (
     <section id="testimonials">
       <div className="py-24 px-8 max-w-7xl mx-auto">
