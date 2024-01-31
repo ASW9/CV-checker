@@ -2,6 +2,7 @@
 import { signOut } from "next-auth/react"
 import Image from "next/image";
 import config from "@/config";
+import ButtonAccountMenu from "../ButtonAccountMenu";
 
 const SideMenu = (props) => {
     return (
@@ -11,14 +12,15 @@ const SideMenu = (props) => {
                 <span
                     class="grid h-10 w-10 place-content-center rounded-lg bg-gray-100 text-xs text-gray-600"
                 >
-                    {/* <Image
-                        src={logo}
-                        alt={`${config.appName} logo`}
-                        priority={true}
-                        className="w-6 h-6"
+                    <img
+                        src={props.session?.user?.image}
+                        alt={props.session?.user?.name || "Account"}
+                        className="w-6 h-6 rounded-full shrink-0"
+                        referrerPolicy="no-referrer"
                         width={24}
                         height={24}
-                    /> */}
+                    />
+                    {/* < ButtonAccountMenu /> */}
                 </span>
                 </div>
 
