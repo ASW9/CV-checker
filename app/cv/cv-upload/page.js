@@ -7,20 +7,37 @@ import FileUpload from '@/components/FileUpload';
 
 const ChatPage = () => {
 
-    const [loadingState, setLoadingState] = useState(null)
-    
-    // bullshit loading mode
-    setLoadingState("🧠 Processing personality...")
-    setTimeout(() => {
-        setLoadingState("📸 Taking assistant headshot...")
-    }, 2000);
-    setTimeout(() => {
-        setLoadingState("🔊 Generating voice...")
-    }, 4000);
-    setTimeout(() => {
-        setLoadingState("✨ Putting on the finishing touches...")
-    }, 6000);
-    // end of bullshit loading mode
+    const [feedbackText, setFeedbackText] = useState("OPENAPI RESPONSE HERE")
+
+    const handlingResponse = async (response) => {
+        console.log("Response returned")
+        const cvText = response
+
+        await apiClient.post("/gpt", cvText)
+        .then((response) => {
+            setFeedbackText(response)
+
+        })
+
+        setLoadingState(false)
+    }
+
+    const [loadingState, setLoadingState] = useState(false)
+
+    const onUpload = async (formData) => {
+        // bullshit loading mode
+        setLoadingState("Uploading file...")
+        setTimeout(() => {
+            setLoadingState("Processing your CV...")
+        }, 2000);
+        setTimeout(() => {
+            setLoadingState("🧠 Generating feedback...")
+        }, 4000);
+        setTimeout(() => {
+            setLoadingState("✨ Putting on the finishing touches...")
+        }, 6000);
+        // end of bullshit loading mode
+    }
 
 
     return (
@@ -46,9 +63,18 @@ const ChatPage = () => {
                             </div>
                         </div>
                         <div  class="animate-pulse">
-                        <FileUpload
+                            <FilePond className='pt-32'
                                 server={{
-                                    process: '/api/upload',
+                                    process: {
+                                        url: '/api/upload',
+                                        method: 'POST',
+                                        withCredentials: false,
+                                        headers: {},
+                                        timeout: 8000,
+                                        onload: handlingResponse,
+                                        onerror: null,
+                                        ondata: onUpload,
+                                    },
                                     fetch: null,
                                     revert: null,
                                 }}
