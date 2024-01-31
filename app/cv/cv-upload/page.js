@@ -9,8 +9,8 @@ const ChatPage = () => {
 
     return (
         <>
-        <div className='flex flex-col h-screen w-screen items-center p-16 justify-center bg-gradient-to-br from-gray-900 via-purple-900 to-violet-600'>
-            <div className='flex border border-gray-700 rounded-2xl flex-col content-between w-full max-w-md justify-between h-[80%] bg-white shadow-2xl'>
+        <div className='flex flex-col h-screen w-screen items-center p-16 justify-center '>
+            <div className='flex border border-gray-700 rounded-2xl flex-col content-between w-full max-w-md justify-between h-[80%] bg-white shadow-lg duration-500 hover:scale-105 ease-in-out'>
                     <div className='text-2xl font-bold border-b border-gray-300 p-4'>
                         Resume checker
                     </div> 
@@ -29,14 +29,17 @@ const ChatPage = () => {
                                 You're one click away from your perfect job!
                             </div>
                         </div>
+                        <div  class="animate-pulse">
                         <FileUpload
-                            server={{
-                                process: '/api/upload',
-                                fetch: null,
-                                revert: null,
-                            }}
-                            credits={{label:'', url:''}}
-                        />
+                                server={{
+                                    process: '/api/upload',
+                                    fetch: null,
+                                    revert: null,
+                                }}
+                                credits={{label:'', url:''}}
+                            />
+                        </div>
+                            
                     </div>
             </div>
 
