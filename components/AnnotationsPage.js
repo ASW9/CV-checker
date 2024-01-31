@@ -17,7 +17,7 @@ const AnnotationComponent = () => {
           </p>
           <div className="flex flex-col w-full items-center">
             <Image
-              src="/Feedback Screenshot.png"
+              src="/badCV.png"
               width={1000}
               height={1000}
               alt=""
