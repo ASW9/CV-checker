@@ -32,7 +32,6 @@ export default async function LayoutPrivate({ children }) {
     // duration-200
     return <div className="h-screen">
         <div className="absolute m-4 left-0">
-            <ButtonAccount />
         </div>
         
         {children}
