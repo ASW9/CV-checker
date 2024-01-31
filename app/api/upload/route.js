@@ -13,6 +13,7 @@ export async function POST(req) {
 }
 
 const getPdfContent = async (formData) => {
+    console.log("HELLOOO")
     const uploadedFiles = formData.getAll('filepond');
     console.log("form data", formData)
     console.log("uploaded files", uploadedFiles)

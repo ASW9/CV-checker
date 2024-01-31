@@ -24,7 +24,8 @@ const ChatPage = () => {
 
     const [loadingState, setLoadingState] = useState(false)
 
-    const onUpload = async (formData) => {
+    const onUpload = (formData) => {
+        console.log("Triggered onUpload function")
         // bullshit loading mode
         setLoadingState("Uploading file...")
         setTimeout(() => {
