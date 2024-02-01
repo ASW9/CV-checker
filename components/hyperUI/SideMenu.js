@@ -80,7 +80,7 @@ const SideMenu = (props) => {
                                         />
                                     </svg> */}
 
-                                        <span class="w-full absolute start-full top-1/2 ms-4 -translate-y-1/2 rounded bg-gray-900 px-2 py-1.5 text-xs font-medium text-white invisible group-hover:visible">
+                                        <span class="absolute start-full top-1/2 ms-4 -translate-y-1/2 rounded bg-gray-900 px-2 py-1.5 text-xs font-medium text-white invisible group-hover:visible">
                                             {item.label}
                                         </span>
                                     </a>
