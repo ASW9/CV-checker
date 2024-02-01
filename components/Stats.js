@@ -13,7 +13,7 @@ const StatsDial = ({ children }) => {
               How you perform
             </h2>
           </div>
-          <div className="flex flex-col w-full items-center">
+          <div className="flex flex-col w-full items-center px-40">
             <Image
               src="/dials.png"
               width={700}
