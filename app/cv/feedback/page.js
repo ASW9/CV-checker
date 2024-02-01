@@ -14,7 +14,7 @@ const FeedbackPage = () => {
     return (
         <>
             < AnnotationComponent />
-            <StatsDial />
+            < StatsDial />
             < UpdatedCVComponent />
         </>
   );

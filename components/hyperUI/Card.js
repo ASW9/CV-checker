@@ -2,7 +2,7 @@ import Image from "next/image"
 
 const Card = (props) => {
     return (
-        <a href={props.href} class="block rounded-lg p-4 m-2 w-full max-w-md shadow-sm shadow-indigo-100 border hover:shadow-md transform duration-200">
+        <a href={props.href} class="block rounded-lg p-4 m-2 w-full max-w-md shadow-sm shadow-indigo-100 border hover:shadow-md transform hover:scale-105 ease-in-out duration-200">
             {props.imgSrc &&
                 <Image
                     src={props.imgSrc}
