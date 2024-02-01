@@ -33,6 +33,20 @@ const CvPage = () => {
 
     return (
         <div className="flex flex-col items-center">
+            <div className="max-w-7xl p-12 px-24">
+                <h2 className="sm:text-5xl text-4xl font-extrabold text-base-content">
+                    Job-Specific CVs
+                </h2>                     
+                <p className="m-auto pt-6 text-center">
+                    Your archive of instantly generated CVs
+                </p>
+            </div>
+            <Card 
+                title="ThoroGood"
+                description="Summer Internship"
+                href="/cv/feedback"
+                overline= "Resumate"
+            />
             <Card 
                 title="Morgan Stanley"
                 description="technology insight week"
@@ -48,12 +62,6 @@ const CvPage = () => {
             <Card 
                 title="Barclays"
                 description="Spring week"
-                href="/cv/feedback"
-                overline= "Resumate"
-            />
-            <Card 
-                title="ThoroGood"
-                description="Summer Internship"
                 href="/cv/feedback"
                 overline= "Resumate"
             />

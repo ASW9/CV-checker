@@ -88,10 +88,10 @@ const ChatPage = () => {
 
     return (
         <>
-            <div className='flex flex-col h-screen w-screen items-center p-16 justify-center '>
-                <div className='flex border border-gray-700 rounded-2xl flex-col content-between w-full max-w-md justify-between h-[80%] bg-white shadow-lg'>
+            <div className='flex flex-col h-screen w-screen items-center p-16 justify-center'>
+                <div className='flex border border-gray-300 rounded-2xl flex-col content-between w-full max-w-md justify-between h-[80%] bg-white shadow-lg'>
                         <div className='text-2xl font-bold border-b border-gray-300 p-4'>
-                            Resume checker
+                            A new CV in 30 seconds
                         </div> 
                         <div className='h-full flex flex-col justify-center p-4'>
                             <div className='flex flex-col items-center'>
@@ -104,11 +104,8 @@ const ChatPage = () => {
                                 <div className="font-bold text-xl p-4">
                                     Upload CV (as PDF)
                                 </div>
-                                <div className="pb-4 text-gray-500">
-                                    You're one click away from your perfect job!
-                                </div>
                             </div>
-                            <div  class="h-32 duration-500 hover:scale-[1.01] ease-in-out'">
+                            <div  class="h-[7rem] duration-500 hover:scale-[1.01] ease-in-out'">
                                 <FilePond className='pt-32'
                                     server={{
                                         process: {
@@ -129,14 +126,13 @@ const ChatPage = () => {
                             </div>
                             {/* <TextInput placeholder="Paste a link to the job description"/> */}
                             <div>
-                                <label for="Job Description" class="block font-bold text-xl text-center"> Describe the job </label>
+                                <label for="Job Description" class="block font-bold text-xl text-center"> Link to job post </label>
 
-                                <textarea
+                                <input
                                     id="OrderNotes"
                                     className="mt-2 p-4 w-full rounded-lg border-2 border-solid border-gray-200 align-top shadow-sm sm:text-sm"
-                                    rows="3"
                                     placeholder="Paste a link to a website describing the company/job..."
-                                ></textarea>
+                                ></input>
                             </div>
                         </div>
                 </div>
