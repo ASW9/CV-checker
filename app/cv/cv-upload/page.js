@@ -7,6 +7,7 @@ import FileUpload from '@/components/FileUpload';
 import { Backdrop, CircularProgress, Typography} from '@mui/material';
 import apiClient from '@/utils/api';
 import { useRouter } from 'next/navigation'
+import TextInput from '@/components/hyperUI/TextInput';
 
 const styles = {
     container: {
@@ -107,7 +108,7 @@ const ChatPage = () => {
                                     You're one click away from your perfect job!
                                 </div>
                             </div>
-                            <div  class="duration-500 hover:scale-[1.01] ease-in-out'">
+                            <div  class="h-32 duration-500 hover:scale-[1.01] ease-in-out'">
                                 <FilePond className='pt-32'
                                     server={{
                                         process: {
@@ -126,7 +127,17 @@ const ChatPage = () => {
                                     credits={{label:'', url:''}}
                                 />
                             </div>
-                                
+                            {/* <TextInput placeholder="Paste a link to the job description"/> */}
+                            <div>
+                                <label for="Job Description" class="block font-bold text-xl text-center"> Describe the job </label>
+
+                                <textarea
+                                    id="OrderNotes"
+                                    className="mt-2 p-4 w-full rounded-lg border-2 border-solid border-gray-200 align-top shadow-sm sm:text-sm"
+                                    rows="3"
+                                    placeholder="Paste a link to a website describing the company/job..."
+                                ></textarea>
+                            </div>
                         </div>
                 </div>
 
@@ -139,7 +150,6 @@ const ChatPage = () => {
                     </Typography>
                 </div>
             </Backdrop>
-        
         </>
   );
 
