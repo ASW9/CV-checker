@@ -14,30 +14,17 @@ const UpdatedCVComponent = ({}) => {
             <p className="lg:w-2/3 mx-auto leading-relaxed text-base text-base-content/80 pb-12">
                 A new CV with all the improvements previously mentioned
             </p>
-            <div class="bg-gray-50 flex flex-col justify-center relative">
-              <div class="max-w-screen">
-                <div class="relative group">
-                  <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200">
-                  </div>
-                  <div class="relative bg-white ring-1 ring-gray-900/5 leading-none flex items-top justify-start space-x-6">
-                    <Image className="shadow-2xl cursor-text"
-                      src="/greatCV.png"
-                      width={1000}
-                      height={2000}
-                      alt=""
-                    />
-                  </div>
-                </div>
+            <div class="relative group">
+              <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-blue-600 blur opacity-100 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse">
               </div>
-            </div>
-            <div className="flex flex-col w-full items-center ">
-              
+              <div class="relative bg-white ring-1 ring-gray-900/5 leading-none flex items-top justify-start space-x-6">
                 <Image className="shadow-2xl cursor-text"
-                    src="/greatCV.png"
-                    width={1000}
-                    height={2000}
-                    alt=""
+                  src="/greatCV.png"
+                  width={1000}
+                  height={2000}
+                  alt=""
                 />
+              </div>
             </div>
             <a href="/greatCV.png" download="cv">
               <button className="btn btn-white btn-wide mt-12">
