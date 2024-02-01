@@ -10,9 +10,8 @@ const AnnotationComponent = () => {
             <h2 className="sm:text-5xl text-4xl font-extrabold text-base-content">
                 Where you could improve
             </h2>                     
-            <p className="m-auto">
-                Don&apos;t take our word for it. Here&apos;s what they have to say
-                about ShipFast. 
+            <p className="m-auto pt-6">
+              Here are some comments on how you could improve your current CV
             </p>
           </div>
           <div className="flex flex-row justify-items-center text-center w-full mb-20">
