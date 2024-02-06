@@ -7,12 +7,12 @@ const UpdatedCVComponent = ({}) => {
       <div className="py-24 px-24 max-w-7xl mx-auto">
         <div className="flex flex-col justify-items-center text-center w-full mb-20 px-40">
             <div className="mb-8">
-                <h2 className="sm:text-5xl text-4xl font-extrabold text-base-content">
-                  Brand New CV
-                </h2>
+              <h2 className="sm:text-5xl text-4xl font-extrabold text-base-content">
+                Brand New CV
+              </h2>
             </div>
             <p className="lg:w-2/3 mx-auto leading-relaxed text-base text-base-content/80 pb-12">
-                An effortlessly optimised CV, generated instantly.
+              An effortlessly optimised CV, generated instantly.
             </p>
             <div class="relative group">
               <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-blue-600 blur opacity-100 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse">

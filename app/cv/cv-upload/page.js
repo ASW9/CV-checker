@@ -82,7 +82,7 @@ const ChatPage = () => {
         setLoadingState(false)
         // end of bullshit loading mode
 
-        router.push('/cv/feedback')
+        //router.push('/cv/feedback')
     }
 
 
